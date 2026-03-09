@@ -23,7 +23,7 @@ MIN_SCORE_LIMIT = -2000
 ITEM_DATA = {
     "anandu": (500, 5, "mandhi.png"),     # Mandhi
     "ashwant": (100, 20, "mess_meals.png"),   # Mess Meals
-    "ujwal": (150, 15, "kanji.png"),    # Kanji
+    "adhin": (150, 15, "kanji.png"),    # Kanji
     "arjun": (300, 10, "shawaya.png"),     # Shawaya
     "jishnu": (400, 8, "biriyani.png"),     # Biriyani
     "anand": (50, 5, "protein_powder.png"),   # Protein Powder
