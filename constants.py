@@ -1,9 +1,11 @@
 import pygame
 
 # Screen Settings
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
+SCREEN_WIDTH = 1200
+SCREEN_HEIGHT = 800
 FPS = 60
+UI_PADDING = 20
+ICON_SIZE = 80
 
 # Colors
 WHITE = (255, 255, 255)
@@ -13,6 +15,9 @@ GREEN = (50, 255, 50)
 SKY_BLUE = (135, 206, 235)
 MIDNIGHT_BLUE = (25, 25, 112)
 BOOST_GOLD = (255, 215, 0)
+SUN_YELLOW = (255, 255, 100)
+MOON_SILVER = (200, 200, 220)
+PANEL_BG = (40, 40, 40, 150)
 
 # Game Rules
 PHASE_DURATION = 15  # seconds
@@ -41,7 +46,7 @@ COLLEAGUE_POSITIONS = {
     "anandu": (50, 150),
     "aswanth": (50, 300),
     "adhin": (50, 450),
-    "arjun": (750, 150),
-    "jishnu": (750, 300),
-    "anand": (750, 450),
+    "arjun": (1150, 150),
+    "jishnu": (1150, 300),
+    "anand": (1150, 450),
 }

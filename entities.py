@@ -81,7 +81,18 @@ class Item(pygame.sprite.Sprite):
         self.rect = new_rect
         self.mask = pygame.mask.from_surface(self.image)
 
-        if self.rect.top > SCREEN_HEIGHT or self.rect.right < 0 or self.rect.left > SCREEN_WIDTH:
+        # Bouncing off walls (at X=100 and X=SCREEN_WIDTH-100)
+        wall_left = 100
+        wall_right = SCREEN_WIDTH - 100
+        
+        if self.rect.left < wall_left and self.vx < 0:
+            self.rect.left = wall_left
+            self.vx = -self.vx * 0.8 # Slightly reduce speed on bounce
+        elif self.rect.right > wall_right and self.vx > 0:
+            self.rect.right = wall_right
+            self.vx = -self.vx * 0.8
+
+        if self.rect.top > SCREEN_HEIGHT:
             self.kill()
 
 class Colleague(pygame.sprite.Sprite):

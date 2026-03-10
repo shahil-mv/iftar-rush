@@ -169,6 +169,30 @@ class Game:
         for hit in hits:
             self.handle_collision(hit)
 
+    def draw_phase_icon(self):
+        center_x = SCREEN_WIDTH // 2
+        center_y = 60
+        radius = 30
+        
+        if self.current_phase == "DAY":
+            # Draw Sun
+            pygame.draw.circle(self.screen, SUN_YELLOW, (center_x, center_y), radius)
+            # Rays
+            for i in range(8):
+                angle = i * (360 / 8)
+                import math
+                rad = math.radians(angle)
+                start_dist = radius + 5
+                end_dist = radius + 15
+                start_p = (center_x + math.cos(rad) * start_dist, center_y + math.sin(rad) * start_dist)
+                end_p = (center_x + math.cos(rad) * end_dist, center_y + math.sin(rad) * end_dist)
+                pygame.draw.line(self.screen, SUN_YELLOW, start_p, end_p, 3)
+        else:
+            # Draw Moon
+            pygame.draw.circle(self.screen, MOON_SILVER, (center_x, center_y), radius)
+            # Inner circle to make it a crescent
+            pygame.draw.circle(self.screen, MIDNIGHT_BLUE, (center_x + 10, center_y - 5), radius - 5)
+
     def draw(self):
         # Background
         bg = self.day_bg if self.current_phase == "DAY" else self.night_bg
@@ -176,8 +200,18 @@ class Game:
         
         # Sprites
         self.all_sprites.draw(self.screen)
+
+        # Sprites
+        self.all_sprites.draw(self.screen)
         
-        # HUD
+        # HUD Panel
+        panel_height = 100
+        hud_panel = pygame.Surface((SCREEN_WIDTH, panel_height), pygame.SRCALPHA)
+        hud_panel.fill(PANEL_BG)
+        self.screen.blit(hud_panel, (0, 0))
+
+        # Phase Icon (Sun/Moon)
+        self.draw_phase_icon()
         score_text = self.font.render(f"Score: {self.score}", True, WHITE)
         self.screen.blit(score_text, (20, 20))
         
