@@ -22,7 +22,7 @@ MIN_SCORE_LIMIT = -2000
 # Item Configs (Name: (Points, Probability, Color/ImageKey))
 ITEM_DATA = {
     "anandu": (500, 5, "mandhi.png"),     # Mandhi
-    "ashwant": (100, 20, "mess_meals.png"),   # Mess Meals
+    "aswanth": (100, 20, "mess_meals.png"),   # Mess Meals
     "adhin": (150, 15, "kanji.png"),    # Kanji
     "arjun": (300, 10, "shawaya.png"),     # Shawaya
     "jishnu": (400, 8, "biriyani.png"),     # Biriyani
@@ -39,8 +39,8 @@ GRAVITY = 0.15
 # Colleague Side Positions (Left: X < SCREEN_WIDTH/2, Right: X > SCREEN_WIDTH/2)
 COLLEAGUE_POSITIONS = {
     "anandu": (50, 150),
-    "ashwant": (50, 300),
-    "vishnu": (50, 450),
+    "aswanth": (50, 300),
+    "adhin": (50, 450),
     "arjun": (750, 150),
     "jishnu": (750, 300),
     "anand": (750, 450),
